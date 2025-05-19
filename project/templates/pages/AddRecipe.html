@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add New Recipe</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+
+    </head>
+    <body>
+  
+            <form class="form-group" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                      <input 
+                      class="inputfield"
+                      type="text"
+                      name="recipe name"
+                      id="name"
+                      placeholder="Recipe name"
+                      required
+                      pattern="[a-zA-Z\s\-']+"
+                      title="Only letters and spaces allowed">
+                  <div class="error"></div>
+            
+                    <br>
+                    <input 
+                    class="inputfield"
+                    type="text"
+                    name="recipe id"
+                    id="id"
+                    placeholder="Recipe ID"
+                    required
+                    pattern="\d+"
+                    title="Numbers only">
+                    <div class="error"></div>
+
+                    <br>
+                    <input required 
+                    class="inputfield"
+                    id="course type" 
+                    list="types" 
+                    name="course type"
+                    placeholder="Course Type">
+                    <div class="error"></div>
+
+                    <br>
+                    <datalist id= "types">
+                        <option value="Main Course">
+                        <option value="Appetizers">
+                        <option value="Dessert">
+                    </datalist>
+
+                    <!--servings-->
+                      <br>
+                      <input
+                      name = "serving"
+                      class="inputfield"
+                      id="serving"
+                      type="text"
+                      placeholder="servings:">
+                      <div class="error"></div>
+
+                      <!--Description-->
+                        <br>
+                        <textarea
+                        name="description"
+                        class="inputfield"
+                        id="description"
+                        placeholder="Type description here"
+                        required
+                        rows="10"
+                        ></textarea>
+                        <div class="error"></div>
+
+                      <!--Ingredients-->
+
+                        <br>
+                        <h4>Ingredients:</h4>
+                        <input
+                        class="inputfield"
+                        id="ingred_name" 
+                        type="text"
+                        name="ingredient name"
+                        placeholder="Ingredient name:">
+                        <div class="error"></div>
+        
+                        <br>
+                        <input
+                        class="inputfield"
+                        id="ingred_quantity" 
+                        type="text"
+                        name="ingredient quantity"
+                        placeholder="Qantity:">
+                        <button id= "addIngred">Add Ingredient</button>
+
+                        <br>
+                        <textarea id="ingred_list" rows="10" placeholder="Ingredients List:">
+                        </textarea>
+                      <!--Instructions-->
+                        <br>
+                        <h4>Instructions</h4>
+                        <textarea placeholder="Enter each step on a new line" 
+                        id="instructions"
+                        name="instructions"
+                        rows="10"
+                        class="inputfield"
+                        ></textarea>
+                        <div class="error"></div>
+
+                      <!--Nutrition-->
+                      <br>
+                      <h4>Nutrition:</h4>
+                      <input 
+                      name="calories"
+                      id="calory"
+                      type="number"
+                      min="1"
+                      placeholder="Calories:"
+                      class="inputfield">
+                      <div class="error"></div>
+                      
+                      <input 
+                      name="protein"
+                      id="protein"
+                      type="text"
+                      placeholder="Protein: (gram)"
+                      class="inputfield">
+                      <div class="error"></div>
+
+                      <input
+                      name="carbs"
+                       id="carbs"
+                      type="text"
+                      placeholder="Carbs: (gram)"
+                      class="inputfield">
+                      <div class="error"></div>
+
+                      <input 
+                      name="fat"
+                      id="fat"
+                      type="text"
+                      placeholder="Fat: (gram)"
+                      class="inputfield">
+                      <div class="error"></div>
+
+                    <!--Time-->
+                      <br>
+                      <h4>Time:</h4>
+                      <input 
+                      name="prep_time"
+                      id="prep"
+                      type="text"
+                      placeholder="Preparing: (minutes)"
+                      class="inputfield">
+                      <div class="error"></div>
+
+                      <input 
+                      name="cook_time"
+                      id="cook"
+                      type="text"
+                      placeholder="Cooking: (minutes)"
+                      class="inputfield">
+                      <div class="error"></div>
+
+                      <div id="total">Total: (minutes)</div>
+
+                    <!--Image-->
+                    <br>
+                    <h4>Image:</h4>
+                    <input type="file" id="image_input" class="inputfield">
+                    <div class="error"></div>
+                    <div id="display_image"></div>  
+  
+
+                    <button id="submit">Add Recipe</button>
+    
+            </form>
+    </body>
+</html>
+
+{% endblock content %}

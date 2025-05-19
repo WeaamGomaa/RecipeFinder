@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Recipe</title>
+        <!-- <link rel="stylesheet" href="css_files/EditRecipe_style.css"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+      <!-- <header class="navbar">
+        <div class="logo"><h1 style ="color: orange ;display:inline;">a</h1>bla Naz<h1 style ="color: orange ;display:inline;">era </h1></div>
+        <nav>
+          <ul class="nav">
+            <li><a href="admin_home.html">Home</a></li>
+            <li><a href="admin_list.html">View&nbsp;list</a></li>
+            <li><a href="Add_New_Recipe.html">Add&nbsp;Recipes</a></li>
+            <li><a href="welcome.html">Log&nbsp;Out</a></li>
+
+          </ul>
+        </nav>
+      </header> -->
+            <form class="recipe_form" >
+                    <input 
+                    type="text"
+                    name="recipe name"
+                    id="name"
+                    placeholder="Recipe name"
+                    
+                    required>
+
+                    <br>
+                    <input 
+                    type="text"
+                    name="recipe id"
+                    id="id"
+                    placeholder="Recipe ID"
+                    
+                    required>
+
+                    <br>
+                    <input required 
+                    id="course type" 
+                    list="types" 
+                    name="course type"
+                    placeholder="Course Type"
+                    >
+
+                    <br>
+                    <datalist id= "types">
+                        <option value="Main Course">
+                        <option value="Appetizers">
+                        <option value="Dessert">
+                    </datalist>
+
+                        <!--servings-->
+                      <br>
+                      <input required
+                      id="serving"
+                      type="text"
+                      placeholder="servings:">
+
+                      <!--Description-->
+                        <br>
+                        <textarea
+                        id="description"
+                        placeholder="Type description here"
+                        required
+                        rows="10"
+                        ></textarea>
+
+                      <!--Ingredients-->
+
+                        <br>
+                        <h4>Ingredients:</h4>
+                        <input
+                        id="ingred_name" 
+                        type="text"
+                        name="ingredient name"
+                        placeholder="Ingredient name:">
+                        <!-- <button id="addName">Add</button> -->
+        
+                        <br>
+                        <input
+                        id="ingred_quantity" 
+                        type="text"
+                        name="ingredient quantity"
+                        placeholder="Qantity:">
+                        <button id= "addIngred">Add Ingredient</button>
+
+                        <br>
+                        <textarea id="ingred_list" rows="10" placeholder="Ingredients List:">
+                        </textarea>
+                      <!--Instructions-->
+                        <br>
+                        <h4>Instructions</h4>
+                        <textarea placeholder="Enter each step on a new line" 
+                        id="instructions"
+                        rows="10"
+                        ></textarea>
+
+                      <!--Nutrition-->
+                      <br>
+                      <h4>Nutrition:</h4>
+                      <input id="calory"
+                      type="number"
+                      min="1"
+                      placeholder="Calories:">
+                      
+                      <input id="protein"
+                      type="text"
+                      placeholder="Protein: (gram)">
+
+                      <input id="carbs"
+                      type="text"
+                      placeholder="Carbs: (gram)">
+
+                      <input id="fat"
+                      type="text"
+                      placeholder="Fat: (gram)">
+
+                      <!-- <button id="add_nutrition">Add</button> -->
+
+                    <!--Time-->
+                      <br>
+                      <h4>Time:</h4>
+                      <input id="prep"
+                      type="text"
+                      placeholder="Preparing: (minutes)">
+
+                      <input id="cook"
+                      type="text"
+                      placeholder="Cooking: (minutes)">
+
+                      <div id="total">Total: (minutes)</div>
+
+                    <!--Image-->
+                    <br>
+                    <h4>Image:</h4>
+                    <input type="file" id="image_input" >
+                    <div id="display_image"></div>  
+
+
+                    <button id="submit">Edit Recipe</button>
+    
+            </form>
+            <script src="js_files/data.js"></script>
+            <script src="js_files/editRecipe_new.js"></script>
+    </body>
+</html>
+
+{% endblock content %}

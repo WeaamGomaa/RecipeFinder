@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/AddRecipe_style.css' %}">
+
+<header class="navbar">
+            <div class="logo"><h1 style ="color: orange ;display:inline;">a</h1>bla Naz<h1 style ="color: orange ;display:inline;">era </h1></div>
+            <nav>
+              <ul class="nav">
+                <li><a href="admin_home.html">Home</a></li>
+                <li><a href="admin_list.html">View&nbsp;list</a></li>
+                <li><a href="Add_New_Recipe.html">Add&nbsp;Recipes</a></li>
+                <li><a href="welcome.html">Log&nbsp;Out</a></li>
+    
+              </ul>
+            </nav>
+          </header>
+
+<style>
+    body {
+        background-image: url("{% static 'image/p5.jpg' %}");
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        height:fit-content;
+        scroll-behavior: smooth;
+    }
+</style>
+
+{% block content %}
+{% endblock content %}
+
+<script src="{% static 'js/addRecipe.js' %}"></script>

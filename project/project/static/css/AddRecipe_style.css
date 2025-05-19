@@ -1,0 +1,179 @@
+/* body {
+    background-image: url("../images/p5.jpg");
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:fit-content;
+    scroll-behavior: smooth;
+    
+} */
+
+form {
+    background-color: #FEFAE0;
+    padding: 25px;
+    margin-top: 100px;
+    width: 40%;
+    display: flex;
+    flex-flow:column;
+    gap: 5px;
+    border-left: 4px;
+    border-right: 4px;
+    border-top: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #606C38;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+}
+
+
+form input, #total{
+    border: 2px solid;
+    border-radius: 6px;
+    border-color: #606C38;
+    outline: none;
+    color:#606C38;
+    background-color: #FEFAE0;
+    padding: 10px 10px;
+    flex-basis: 30px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 14px;
+}
+
+h4{
+  font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color:#606C38;
+}
+
+textarea {
+    border: 2px solid;
+    border-radius: 6px;
+    border-color: #606C38;
+    outline: none;
+    color:#606C38;
+    background-color: #FEFAE0;
+    padding: 10px 10px;
+    
+}
+
+form button {
+    background-color: #606C38;
+    color:#283618;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-top: 5px;
+    height: 30px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 550;
+    transition: 0.3s;
+}
+
+#display_image{
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid;
+  border-radius: 6px;
+  border-color: #606C38;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 4px #815f91, inset -2px -2px 4px #815f91;
+    transform: scale(0.95);
+}
+
+button:hover {
+    background: #dda15e;
+    transform: scale(1.05);
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+
+    padding: 5px 20px;
+
+    position: fixed; /* Stays at the top even when scrolling */
+    top: 0; /* Stick to the very top */
+    left: 0; /* Start from the left edge */
+    width: 100%; /* Full width */
+    background: #606C38; /* Dark background */
+    text-align: center; /* Center-align links */
+  }
+  
+  .logo {
+    width: 30%;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+   
+
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 70%;
+    padding: 0;
+    
+    
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+
+  }
+  
+  .nav a:hover {
+    color: #dda15e;
+  }
+  .nav a:active {
+    color: #967373;
+  }
+
+  /* Add to existing CSS */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.inputfield.visited:invalid {
+  border-color: red;
+}
+
+.inputfield.visited:valid {
+  border-color: green;
+}
+
+/* Make the form scrollable if content is too long */
+/* form {
+  overflow-y: auto;
+  max-height: 90vh;
+  padding: 25px;
+} */
+
+/* Style for required field indicators */
+.required:after {
+  content: " *";
+  color: red;
+}
+
